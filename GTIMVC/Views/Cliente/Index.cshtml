@@ -1,0 +1,48 @@
+﻿@model IEnumerable<GTIMVC.MODEL.Cliente>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2>Clientes Cadastrados</h2>
+<div class="e=">
+    <table class="table font">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cpf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rg)
+            </th>
+            <th>
+               Ações
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cpf)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rg)
+                </td>
+                <td>
+                    <a href="FormAlterar/@item.Id" Class="btn btn-secondary">Editar</a>
+                    <a href="Detalhes/@item.Id" Class="btn btn-secondary">Detalhes</a>
+                    <a href="FormExcluir/@item.Id" Class="btn btn-danger">Excluir</a>
+                </td>
+            </tr>
+        }
+    </table>
+    <a href="Form" Class="btn btn-success">Inserir novo Cliente</a>
+    <a href="Home" Class="btn btn-primary">Voltar para página Inicial</a>
+</div>

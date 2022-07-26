@@ -1,0 +1,195 @@
+﻿@model IEnumerable<GTIMVC.MODEL.Cliente>
+
+@{
+    ViewBag.Title = "Form";
+}
+<h2>Cadastrar cliente</h2>
+<div class="container">
+    <form action="/Cliente/Adicionar/" method="post">
+        <div class="d-flex flex-row mb-1">
+            <span class="title">Cliente</span>
+        </div>
+        <div class="d-flex flex-row mb-1">
+            <div class="flex-row col-2">
+                <label for="cpf" class="form-label">CPF*</label>
+                <div class="input-group mb-1 p-1">
+                    <input type="text" name="cliente.Cpf" class="form-control" id="cpf" aria-describedby="basic-addon3" required>
+                </div>
+            </div>
+            <div class="flex-row col-10">
+                <label for="nome" class="form-label">Nome*</label>
+                <div class="input-group mb-1 p-1">
+                    <input type="text" name="cliente.Nome" class="form-control " id="nome" aria-describedby="basic-addon3" required>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-row mb-1">
+            <div class="flex-row col-3">
+                <label for="rg" class="form-label">RG</label>
+                <div class="input-group mb-1 p-1">
+                    <input type="text" name="cliente.Rg" class="form-control" id="rg" aria-describedby="basic-addon3" required>
+                </div>
+            </div>
+            <div class="flex-row col-3">
+                <label for="dataExpedicao" class="form-label">Data de Expedição</label>
+                <div class="input-group mb-1 p-1">
+                    <input type="date" name="cliente.DataExpedicao" class="form-control" id="dataExpedicao" aria-describedby="basic-addon3" required>
+                </div>
+            </div>
+            <div class="flex-row col-3">
+                <label for="orgaoExpedidor" class="form-label">Orgão Expedidor</label>
+                <div class="input-group mb-1 p-1">
+                    <input type="text" name="cliente.OrgaoExpedicao" class="form-control" id="orgaoExpedidor" aria-describedby="basic-addon3" required>
+                </div>
+            </div>
+            <div class="flex-row col-2">
+                <label for="ufExpedicao" class="form-label">UF de Expedição</label>
+                <div class="input-group mb-1 p-1">
+                    <select id="uf" name="cliente.UfExpedicao" class="form-control" required>
+                        <option value="selecione" selected>Selecione</option>
+                        <option value="ac">AC</option>
+                        <option value="al">AL</option>
+                        <option value="ap">AP</option>
+                        <option value="am">AM</option>
+                        <option value="ba">BA</option>
+                        <option value="ce">CE</option>
+                        <option value="df">DF</option>
+                        <option value="go">GO</option>
+                        <option value="ma">MA</option>
+                        <option value="mt">MT</option>
+                        <option value="ms">MS</option>
+                        <option value="mg">MG</option>
+                        <option value="pa">PA</option>
+                        <option value="pb">PB</option>
+                        <option value="pe">PE</option>
+                        <option value="pi">PI</option>
+                        <option value="rj">RJ</option>
+                        <option value="rn">RN</option>
+                        <option value="rs">RS</option>
+                        <option value="ro">RO</option>
+                        <option value="rr">RR</option>
+                        <option value="sc">SC</option>
+                        <option value="sp">SP</option>
+                        <option value="se">SE</option>
+                        <option value="to">TO</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-row mb-1">
+            <div class="flex-row col-3">
+                <label for="dataNascimento" class="form-label">Data Nascimento*</label>
+                <div class="input-group mb-1 p-1">
+                    <input type="date" name="cliente.DataNascimento" class="form-control" id="dataNascimento" aria-describedby="basic-addon3" required>
+                </div>
+            </div>
+            <div class="flex-row col-3">
+                <label for="sexo" class="form-label">Sexo*</label>
+                <div class="input-group mb-1 p-1">
+                    <select id="estadoCivil" name="cliente.Sexo" class="form-control" required>
+                        <option value="selecione" selected>Selecione</option>
+                        <option value="solteiro">Masculino</option>
+                        <option value="casado">Feminino</option>
+                        <option value="viuvo">Indefinido</option>
+                    </select>
+                </div>
+            </div>
+            <div class="flex-row col-3">
+                <label for="estadoCivil" class="form-label">Estado Civil*</label>
+                <div class="input-group mb-1 p-1">
+                    <select id="estadoCivil" name="cliente.EstadoCivil" class="form-control" required>
+                        <option value="selecione" selected>Selecione</option>
+                        <option value="solteiro">Solteiro(a)</option>
+                        <option value="casado">Casado(a)</option>
+                        <option value="viuvo">Viúvo(a)</option>
+                        <option value="viuvo">Divorciado(a)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-row mb-1">
+            <span class="title">Endereço</span>
+        </div>
+        <div class="d-flex flex-row mb-1">
+            <div class="flex-row col-2">
+                <label for="cep" class="form-label">CEP*</label>
+                <div class="input-group mb-1 p-1">
+                    <input id="cep" name="cliente.Cep" type="number" class="form-control" aria-describedby="button-addon2" required>
+                </div>
+            </div>
+            <div class="flex-row col-2">
+                <label for="rua" class="form-label">Rua*</label>
+                <div class="input-group mb-1 p-1">
+                    <input type="text" name="cliente.Logradouro" class="form-control" id="rua" aria-describedby="basic-addon3" required>
+                </div>
+            </div>
+            <div class="flex-row col-1">
+                <label for="numero" class="form-label">Número*</label>
+                <div class="input-group mb-1 p-1">
+                    <input type="number" name="cliente.Numero" class="form-control" id="numero" aria-describedby="basic-addon3" required>
+                </div>
+            </div>
+            <div class="flex-row col-2">
+                <label for="complemento" class="form-label">Complemento*</label>
+                <div class="input-group mb-1 p-1">
+                    <input type="text" name="cliente.Complemento" class="form-control" id="complemento" aria-describedby="basic-addon3" required>
+                </div>
+            </div>
+            <div class="flex-row col-2">
+                <label for="bairro" class="form-label">Bairro*</label>
+                <div class="input-group mb-3 p-1">
+                    <input type="text" name="cliente.Bairro" class="form-control" id="bairro" aria-describedby="basic-addon3" required>
+                </div>
+            </div>
+            <div class="flex-row col-2">
+                <label for="cidade" class="form-label">Cidade*</label>
+                <div class="input-group mb-3 p-1">
+                    <input type="text" name="cliente.Cidade" class="form-control" id="cidade" aria-describedby="basic-addon3" required>
+                </div>
+            </div>
+            <div class="flex-row col-1">
+                <label for="uf" class="form-label">UF*</label>
+                <div class="input-group mb-1 p-1">
+                    <select id="uf" name="cliente.Uf" class="form-control" required>
+                        <option value="selecione" selected>Selecione</option>
+                        <option value="ac">AC</option>
+                        <option value="al">AL</option>
+                        <option value="ap">AP</option>
+                        <option value="am">AM</option>
+                        <option value="ba">BA</option>
+                        <option value="ce">CE</option>
+                        <option value="df">DF</option>
+                        <option value="go">GO</option>
+                        <option value="ma">MA</option>
+                        <option value="mt">MT</option>
+                        <option value="ms">MS</option>
+                        <option value="mg">MG</option>
+                        <option value="pa">PA</option>
+                        <option value="pb">PB</option>
+                        <option value="pe">PE</option>
+                        <option value="pi">PI</option>
+                        <option value="rj">RJ</option>
+                        <option value="rn">RN</option>
+                        <option value="rs">RS</option>
+                        <option value="ro">RO</option>
+                        <option value="rr">RR</option>
+                        <option value="sc">SC</option>
+                        <option value="sp">SP</option>
+                        <option value="se">SE</option>
+                        <option value="to">TO</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="d-grid gap-2 col-2 mx-auto">
+            <input class="btn btn-success" type="submit" value="Cadastrar">
+        </div>
+        <br />
+        <div class="d-grid gap-2 col-4 mx-auto">
+            <a href="Home" Class="btn btn-primary">Página Inicial</a>
+            <a href="Index" Class="btn btn-primary">Clientes cadastrados</a>
+        </div>
+    </form>
+</div>
+
+
