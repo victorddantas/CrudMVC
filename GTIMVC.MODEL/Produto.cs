@@ -8,8 +8,9 @@ namespace GTIMVC.MODEL
 {
     public class Produto
     {
-        public int IDProduto { get; set; }
-        public int IDProdutoCategoria { get; set; }
+        public int Id { get; set; }
+        public Categoria Categoria{ get; set; }
+        public int IdCategoria { get; set; }
         public string Nome { get; set; }
         public string Marca { get; set; }
         public string Fornecedor { get; set; }

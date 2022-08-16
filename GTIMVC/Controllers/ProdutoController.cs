@@ -1,5 +1,6 @@
 ﻿using GTIMVC.BL;
 using GTIMVC.MODEL;
+using GTIMVC.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace GTIMVC.Controllers
         {
             ProdutoBL produtoBL = new ProdutoBL();
             List<Produto> produtos = produtoBL.Listar();
-
+            
             return View(produtos);
         }
     }

@@ -37,8 +37,12 @@ namespace DAO
                 {
                     Produto produto = new Produto
                     {
-                        IDProduto = Convert.ToInt32(radProduto["IDProduto"]),
-                        IDProdutoCategoria = Convert.ToInt32(radProduto["IDProdutoCategoria"]),
+                        Id = Convert.ToInt32(radProduto["Id"]),
+                        Categoria  = new Categoria()
+                        {
+                            Descricao = (string)(radProduto["Categoria"]),
+                        },
+
                         Nome = (string)radProduto["Nome"],
                         Marca = (string)radProduto["Marca"],
                         Fornecedor = (string)(radProduto["Fornecedor"]),
