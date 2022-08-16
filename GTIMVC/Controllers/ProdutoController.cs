@@ -20,5 +20,31 @@ namespace GTIMVC.Controllers
             
             return View(produtos);
         }
+
+        public ActionResult FormProduto()
+        {
+            ProdutoBL produtoBL = new ProdutoBL();
+            var produtos = produtoBL.Listar();
+
+            ListarCategorias();
+
+            return View(produtos);
+        }
+
+        [HttpPost]
+        public ActionResult Adicionar(Produto produto)
+        {
+            ProdutoBL produtoBL = new ProdutoBL();
+            produtoBL.Inserir(produto);
+
+            return RedirectToAction("Index", "Cliente");
+        }
+
+        private void ListarCategorias()
+        {
+            CategoriaBL categoriaBL = new CategoriaBL();
+            var categorias = categoriaBL.Listar();
+            ViewBag.Categorias = categorias;
+        }
     }
 }

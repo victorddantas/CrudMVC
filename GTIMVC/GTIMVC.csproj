@@ -207,6 +207,7 @@
     <Content Include="Views\Cliente\Home.cshtml" />
     <Content Include="Views\Cliente\Excluir.cshtml" />
     <Content Include="Views\Produto\Index.cshtml" />
+    <Content Include="Views\Produto\FormProduto.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
