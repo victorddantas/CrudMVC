@@ -13,7 +13,18 @@ namespace GTIMVC.BL
         #region Listar
         public List<Produto> Listar()
         {
-            return new ProdutoDAO().Listar();
+            return new ProdutoDao().Listar();
+        }
+        #endregion
+
+        #region Inserir
+        public int Inserir(Produto produto)
+        {
+            ProdutoDao dao = new ProdutoDao();
+
+            return dao.Inserir(produto);
+
+
         }
         #endregion
     }
