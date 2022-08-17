@@ -17,7 +17,7 @@ namespace GTIMVC.Controllers
         {
             ProdutoBL produtoBL = new ProdutoBL();
             List<Produto> produtos = produtoBL.Listar();
-
+            
             return View(produtos);
         }
 
@@ -45,7 +45,7 @@ namespace GTIMVC.Controllers
         {
             ProdutoBL produtoBL = new ProdutoBL();
             produtoBL.Excluir(Id);
-            return RedirectToAction("Index", "Produto");
+            return RedirectToAction("FormProduto", "Produto");
         }
 
         public ActionResult Detalhes(int id)
@@ -62,7 +62,7 @@ namespace GTIMVC.Controllers
             ProdutoBL produtoBL = new ProdutoBL();
             produtoBL.Inserir(produto);
 
-            return RedirectToAction("Index", "produto");
+            return RedirectToAction("FormProduto", "produto");
         }
 
         [HttpPost]

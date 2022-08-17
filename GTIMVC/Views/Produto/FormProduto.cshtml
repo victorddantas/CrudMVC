@@ -6,48 +6,49 @@
 <h2>Cadastrar Produto</h2>
 <div class="container">
     <form action="/Produto/Adicionar/" method="post">
-            <div class="input-group mb-1 p-1">
-                <div class="form-group">
+        <div class="input-group mb-1 p-1">
+            <div class="form-group">
 
-                    @Html.DropDownList("produto.CategoriaId", (IEnumerable<SelectListItem>)ViewBag.Categorias, "Selecione", new { @class = "dropdown" })
+                @Html.DropDownList("produto.CategoriaId", (IEnumerable<SelectListItem>)ViewBag.Categorias, "Selecione", new { @class = "dropdown" })
 
+            </div>
+        </div>
+        <div class="d-flex flex-row mb-1">
+            <div class="flex-row col-2">
+                <label for="nome" class="form-label">Nome*</label>
+                <div class="input-group mb-1 p-1">
+                    <input type="text" name="produto.Nome" class="form-control" id="nome" aria-describedby="basic-addon3" required>
                 </div>
             </div>
-            <div class="d-flex flex-row mb-1">
-                <div class="flex-row col-2">
-                    <label for="nome" class="form-label">Nome*</label>
-                    <div class="input-group mb-1 p-1">
-                        <input type="text" name="produto.Nome" class="form-control" id="nome" aria-describedby="basic-addon3" required>
-                    </div>
-                </div>
-                <div class="flex-row col-10">
-                    <label for="marca" class="form-label">Marca*</label>
-                    <div class="input-group mb-1 p-1">
-                        <input type="text" name="produto.Marca" class="form-control " id="marca" aria-describedby="basic-addon3" required>
-                    </div>
+            <div class="flex-row col-10">
+                <label for="marca" class="form-label">Marca*</label>
+                <div class="input-group mb-1 p-1">
+                    <input type="text" name="produto.Marca" class="form-control " id="marca" aria-describedby="basic-addon3" required>
                 </div>
             </div>
-            <div class="d-flex flex-row mb-1">
-                <div class="flex-row col-3">
-                    <label for="fornecedor" class="form-label">Fornecedor*</label>
-                    <div class="input-group mb-1 p-1">
-                        <input type="text" name="produto.Fornecedor" class="form-control" id="fornecedor" aria-describedby="basic-addon3" required>
-                    </div>
-                </div>
-                <div class="flex-row col-3">
-                    <label for="peso" class="form-label">Peso*</label>
-                    <div class="input-group mb-1 p-1">
-                        <input type="number" name="produto.Peso" class="form-control" id="peso" aria-describedby="basic-addon3" required>
-                    </div>
+        </div>
+        <div class="d-flex flex-row mb-1">
+            <div class="flex-row col-3">
+                <label for="fornecedor" class="form-label">Fornecedor*</label>
+                <div class="input-group mb-1 p-1">
+                    <input type="text" name="produto.Fornecedor" class="form-control" id="fornecedor" aria-describedby="basic-addon3" required>
                 </div>
             </div>
+            <div class="flex-row col-3">
+                <label for="peso" class="form-label">Peso*</label>
+                <div class="input-group mb-1 p-1">
+                    <input type="number" name="produto.Peso" class="form-control" id="peso" aria-describedby="basic-addon3" required>
+                </div>
+            </div>
+        </div>
         <div class="d-grid gap-2 col-2 mx-auto">
             <input class="btn btn-success" type="submit" value="Cadastrar">
         </div>
+
         <br />
-        <div class="d-grid gap-2 col-4 mx-auto">
-            <a href="Home" Class="btn btn-primary">Página Inicial</a>
-            <a href="Index" Class="btn btn-primary">Produtos cadastrados</a>
-        </div>
     </form>
+</div>
+
+<div id="grid-tomador-container" class="sticky-table-header fixed-solution table-responsive">
+    @{Html.RenderPartial("Index", Model);}
 </div>
