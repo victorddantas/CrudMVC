@@ -82,11 +82,11 @@ namespace DAO
                 SqlCommand cmd = new SqlCommand("USP_I_PRODUTO", con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@Nome", produto.Categoria);
-                cmd.Parameters.AddWithValue("@Cpf", produto.Nome);
-                cmd.Parameters.AddWithValue("@Rg", produto.Marca);
-                cmd.Parameters.AddWithValue("@UfExpedicao", produto.Fornecedor);
-                cmd.Parameters.AddWithValue("@Sexo", produto.Peso);
+                cmd.Parameters.AddWithValue("@CategoriaId", produto.CategoriaId);
+                cmd.Parameters.AddWithValue("@Nome", produto.Nome);
+                cmd.Parameters.AddWithValue("@Marca", produto.Marca);
+                cmd.Parameters.AddWithValue("@Fornecedor", produto.Fornecedor);
+                cmd.Parameters.AddWithValue("@Peso", produto.Peso);
 
                 idProduto = Convert.ToInt32(cmd.ExecuteScalar());
             }

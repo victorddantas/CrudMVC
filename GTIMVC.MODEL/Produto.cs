@@ -10,7 +10,7 @@ namespace GTIMVC.MODEL
     {
         public int Id { get; set; }
         public Categoria Categoria{ get; set; }
-        public int IdCategoria { get; set; }
+        public int CategoriaId { get; set; }
         public string Nome { get; set; }
         public string Marca { get; set; }
         public string Fornecedor { get; set; }

@@ -37,7 +37,7 @@ namespace GTIMVC.Controllers
             ProdutoBL produtoBL = new ProdutoBL();
             produtoBL.Inserir(produto);
 
-            return RedirectToAction("Index", "Cliente");
+            return RedirectToAction("Index", "Produto");
         }
 
         private void ListarCategorias()
