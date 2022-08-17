@@ -41,14 +41,14 @@ namespace GTIMVC.Controllers
             return View(produto);
         }
 
-        public ActionResult FormExcluir(int id)
+        public ActionResult FormExcluir(int Id)
         {
             ProdutoBL produtoBL = new ProdutoBL();
-            var produto = produtoBL.Obter(id);
-            return View(produto);
+            produtoBL.Excluir(Id);
+            return RedirectToAction("Index", "Produto");
         }
 
-            [HttpPost]
+        [HttpPost]
         public ActionResult Adicionar(Produto produto)
         {
             ProdutoBL produtoBL = new ProdutoBL();
@@ -66,14 +66,6 @@ namespace GTIMVC.Controllers
             return RedirectToAction("Index", "Produto");
         }
 
-        [HttpPost]
-        public ActionResult Excluir(int id)
-        {
-            ProdutoBL produtoBL = new ProdutoBL();
-            produtoBL.Excluir(id);
-
-            return RedirectToAction("Index", "Produto");
-        }
 
         private void ListarCategorias()
         {

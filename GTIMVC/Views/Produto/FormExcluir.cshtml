@@ -3,31 +3,34 @@
 @{
     ViewBag.Title = "FormExcluir";
 }
-<form action="/Produto/Excluir/@Model.Id" method="post">
-    <h3>Você deseja realmente excluir esse produto?</h3>
-    <div>
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Nome)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Nome)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.Marca)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Marca)
-            </dd>
-        </dl>
-        @using (Html.BeginForm())
-        {
-            @Html.AntiForgeryToken()
 
-            <div class="form-actions no-color">
-                <input type="submit" value="Excluir" class="btn btn-danger" /> |
-                @Html.ActionLink("Cancelar", "Index")
-            </div>
-        }
-    </div>
-</form>
+<h3>Você deseja realmente excluir esse produto?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Marca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Marca)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("Cancelar", "Index")
+        </div>
+    }
+</div>

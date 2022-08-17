@@ -174,7 +174,7 @@ namespace DAO
         #endregion
 
         #region Excluir
-        public void Excluir(int id)
+        public void Excluir(int Id)
         {
             SqlConnection con = null;
 
@@ -186,7 +186,7 @@ namespace DAO
 
                 SqlCommand cmd = new SqlCommand("USP_D_PRODUTO", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Id", id);
+                cmd.Parameters.AddWithValue("@Id", Id);
 
                 cmd.ExecuteNonQuery();
             }
