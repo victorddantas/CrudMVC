@@ -207,6 +207,7 @@
     <Content Include="Views\Produto\FormProduto.cshtml" />
     <Content Include="Views\Produto\FormAlterar.cshtml" />
     <Content Include="Views\Produto\FormExcluir.cshtml" />
+    <Content Include="Views\Produto\Detalhes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

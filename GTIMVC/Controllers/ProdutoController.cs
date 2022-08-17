@@ -48,6 +48,14 @@ namespace GTIMVC.Controllers
             return RedirectToAction("Index", "Produto");
         }
 
+        public ActionResult Detalhes(int id)
+        {
+            ProdutoBL produtoBL = new ProdutoBL();
+            var produto = produtoBL.Obter(id);
+
+            return View(produto);
+        }
+
         [HttpPost]
         public ActionResult Adicionar(Produto produto)
         {
