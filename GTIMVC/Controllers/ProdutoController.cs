@@ -66,7 +66,7 @@ namespace GTIMVC.Controllers
                 (
                     new CategoriaBL().Listar(),
                   "Id",
-                    "Descricao"
+                  "Descricao"
                 );
 
         }
