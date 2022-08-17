@@ -27,5 +27,21 @@ namespace GTIMVC.BL
 
         }
         #endregion
+       
+        #region Atualizar
+        public void Atualizar(Produto produto)
+        {
+
+            new ProdutoDao().Atualizar(produto);
+        }
+        #endregion
+
+        #region Obter
+        public Produto Obter(int Id)
+        {
+            return new ProdutoDao().Obter(Id);
+        }
+        #endregion
+
     }
 }

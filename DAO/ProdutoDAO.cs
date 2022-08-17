@@ -98,5 +98,79 @@ namespace DAO
             return idProduto;
         }
         #endregion
+
+        #region Atualizar
+        public void Atualizar(Produto produto)
+        {
+            SqlConnection con = null;
+
+            try
+            {
+                string strConexao = ConfigurationManager.ConnectionStrings["conAlex"].ConnectionString;
+                con = new SqlConnection(strConexao);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("USP_U_PRODUTO", con);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@Id", produto.Id);
+                cmd.Parameters.AddWithValue("@CategoriaId", produto.CategoriaId);
+                cmd.Parameters.AddWithValue("@Nome", produto.Nome);
+                cmd.Parameters.AddWithValue("@Marca", produto.Marca);
+                cmd.Parameters.AddWithValue("@Fornecedor", produto.Fornecedor);
+                cmd.Parameters.AddWithValue("@Peso", produto.Peso);
+
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                if (con != null)
+                    con.Close();
+            }
+        }
+        #endregion
+
+        #region Obter
+        public Produto Obter(int id)
+        {
+            SqlConnection con = null;
+            Produto produto = null;
+
+            try
+            {
+                string strConexao = ConfigurationManager.ConnectionStrings["conAlex"].ConnectionString;
+                con = new SqlConnection(strConexao);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("USP_O_PRODUTO", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("id", id);
+
+                SqlDataReader radProdutos = cmd.ExecuteReader();
+
+
+                if (radProdutos.Read())
+                {
+                    produto = new Produto();
+
+                    produto.CategoriaId = Convert.ToInt32(radProdutos["CategoriaId"]);
+                    produto.Nome = (string)radProdutos["Nome"];
+                    produto.Marca = (string)radProdutos["Marca"];
+                    produto.Fornecedor = (string)(radProdutos["Fornecedor"]);
+                    produto.Peso = (double)(radProdutos["Peso"]);
+
+                }
+
+            }
+            finally
+            {
+                if (con != null)
+                    con.Close();
+            }
+
+            return produto;
+        }
+        #endregion
     }
 }

@@ -17,7 +17,7 @@ namespace GTIMVC.Controllers
         {
             ProdutoBL produtoBL = new ProdutoBL();
             List<Produto> produtos = produtoBL.Listar();
-            
+
             return View(produtos);
         }
 
@@ -31,20 +31,44 @@ namespace GTIMVC.Controllers
             return View(produtos);
         }
 
+        public ActionResult FormAlterar(int id)
+        {
+            ProdutoBL produtoBL = new ProdutoBL();
+            var produto = produtoBL.Obter(id);
+
+            ListarCategorias();
+
+            return View(produto);
+        }
+
         [HttpPost]
         public ActionResult Adicionar(Produto produto)
         {
             ProdutoBL produtoBL = new ProdutoBL();
             produtoBL.Inserir(produto);
 
+            return RedirectToAction("Index", "produto");
+        }
+
+        [HttpPost]
+        public ActionResult Atualizar(Produto produto)
+        {
+            ProdutoBL produtoBL = new ProdutoBL();
+            produtoBL.Atualizar(produto);
+
             return RedirectToAction("Index", "Produto");
         }
 
         private void ListarCategorias()
         {
-            CategoriaBL categoriaBL = new CategoriaBL();
-            var categorias = categoriaBL.Listar();
-            ViewBag.Categorias = categorias;
+            ViewBag.Categorias = new SelectList
+
+                (
+                    new CategoriaBL().Listar(),
+                  "Id",
+                    "Descricao"
+                );
+
         }
     }
 }

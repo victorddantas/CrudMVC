@@ -9,14 +9,11 @@
             <div class="input-group mb-1 p-1">
                 <div class="flex-row col-2">
                     <label for="categoria" class="form-label">Categoria*</label>
-                    <select id="categoriaId" name="produto.CategoriaId" class="form-control" required>
 
-                        @foreach (var c in ViewBag.Categorias)
-                        {
-                            <option value="@c.Id" selected="@c.Id">@c.Descricao</option>
-                        }
+                    @Html.DropDownList("Id", (IEnumerable<SelectListItem>)ViewBag.Categorias, "Selecione", new { @class = "btn btn-light dropdown-toggle" })
 
-                    </select>
+
+
                 </div>
             </div>
             <div class="d-flex flex-row mb-1">
