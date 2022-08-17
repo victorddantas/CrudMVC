@@ -7,10 +7,9 @@
 <div class="container">
     <form action="/Produto/Adicionar/" method="post">
             <div class="input-group mb-1 p-1">
-                <div class="flex-row col-2">
-                    <label for="categoria" class="form-label">Categoria*</label>
+                <div class="form-group">
 
-                    @Html.DropDownList("Id", (IEnumerable<SelectListItem>)ViewBag.Categorias, "Selecione", new { @class = "btn btn-light dropdown-toggle" })
+                    @Html.DropDownList("produto.CategoriaId", (IEnumerable<SelectListItem>)ViewBag.Categorias, "Selecione", new { @class = "dropdown" })
 
                 </div>
             </div>

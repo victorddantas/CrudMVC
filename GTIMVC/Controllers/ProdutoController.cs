@@ -41,7 +41,14 @@ namespace GTIMVC.Controllers
             return View(produto);
         }
 
-        [HttpPost]
+        public ActionResult FormExcluir(int id)
+        {
+            ProdutoBL produtoBL = new ProdutoBL();
+            var produto = produtoBL.Obter(id);
+            return View(produto);
+        }
+
+            [HttpPost]
         public ActionResult Adicionar(Produto produto)
         {
             ProdutoBL produtoBL = new ProdutoBL();
