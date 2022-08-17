@@ -172,5 +172,30 @@ namespace DAO
             return produto;
         }
         #endregion
+
+        #region Excluir
+        public void Excluir(int id)
+        {
+            SqlConnection con = null;
+
+            try
+            {
+                string strConexao = ConfigurationManager.ConnectionStrings["conAlex"].ConnectionString;
+                con = new SqlConnection(strConexao);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("USP_D_PRODUTO", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Id", id);
+
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                if (con != null)
+                    con.Close();
+            }
+        }
+        #endregion
     }
 }

@@ -198,14 +198,11 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Cliente\Index.cshtml" />
-    <Content Include="Views\Cliente\Adicionar.cshtml" />
     <Content Include="Views\Cliente\Form.cshtml" />
     <Content Include="Views\Cliente\Detalhes.cshtml" />
-    <Content Include="Views\Cliente\Atualizar.cshtml" />
     <Content Include="Views\Cliente\FormAlterar.cshtml" />
     <Content Include="Views\Cliente\FormExcluir.cshtml" />
     <Content Include="Views\Cliente\Home.cshtml" />
-    <Content Include="Views\Cliente\Excluir.cshtml" />
     <Content Include="Views\Produto\Index.cshtml" />
     <Content Include="Views\Produto\FormProduto.cshtml" />
     <Content Include="Views\Produto\FormAlterar.cshtml" />

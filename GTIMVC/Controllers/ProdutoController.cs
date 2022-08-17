@@ -66,6 +66,15 @@ namespace GTIMVC.Controllers
             return RedirectToAction("Index", "Produto");
         }
 
+        [HttpPost]
+        public ActionResult Excluir(int id)
+        {
+            ProdutoBL produtoBL = new ProdutoBL();
+            produtoBL.Excluir(id);
+
+            return RedirectToAction("Index", "Produto");
+        }
+
         private void ListarCategorias()
         {
             ViewBag.Categorias = new SelectList

@@ -43,5 +43,14 @@ namespace GTIMVC.BL
         }
         #endregion
 
+        #region Deletar
+        public void Excluir(int Id)
+        {
+            ProdutoDao produtoDao = new ProdutoDao();
+            produtoDao.Excluir(Id);
+
+        }
+        #endregion
+
     }
 }
