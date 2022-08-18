@@ -71,7 +71,7 @@ namespace GTIMVC.Controllers
             ProdutoBL produtoBL = new ProdutoBL();
             produtoBL.Atualizar(produto);
 
-            return RedirectToAction("Index", "Produto");
+            return RedirectToAction("FormProduto", "Produto");
         }
 
 
